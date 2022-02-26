@@ -22,9 +22,11 @@ body .card__title h1 {
 body .card__content form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 0.5em;
   font-weight: 400;
+}
+body .card__content form label {
+  text-align: left;
 }
 body .card__content form input {
   width: fit-content;
@@ -48,7 +50,7 @@ body .card__content form button {
   border: 0;
   border-radius: 0.8em;
   background-color: #ffffff;
-  margin-top: 0.5em;
+  margin: 0.5em 0 0.7em 0;
   font-weight: 500;
   text-transform: uppercase;
 }

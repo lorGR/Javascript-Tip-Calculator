@@ -23,9 +23,11 @@ body{
             form{
                 display: flex;
                 flex-direction: column;
-                align-items: center;
                 gap: .5em;
                 font-weight: 400;
+                label{
+                    text-align: left;
+                }
                 input{
                     width: fit-content;
                     padding: .5em 1em;
@@ -48,7 +50,7 @@ body{
                     border: 0;
                     border-radius: .8em;
                     background-color: #ffffff;
-                    margin-top: .5em;
+                    margin: .5em 0 .7em 0;
                     font-weight: 500;
                     text-transform: uppercase;
                 }
