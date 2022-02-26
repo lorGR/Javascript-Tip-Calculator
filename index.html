@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+        <div class="card__title">
+            <h1>Tip Calculator</h1>
+        </div>
+        <div class="card__content">
+            <form action="/">
+                <label for="billAmount">Enter the bill amount:</label>
+                <input type="number" name="tipCalc" value="billAmount" id="billAmount" placeholder="Bill in ₪">
+
+                <label for="serviceRate">Choose your tip:</label>
+                <select name="serviceRate" id="serviceRate">
+                    <option value="5">5% - Bad service</option>
+                    <option value="10">10% - Good service</option>
+                    <option value="15">15% - Great service</option>
+                    <option value="20">20% - Extraordinary service</option>
+                </select>
+            </form>
+        </div>
+        <div class="card__footer">
+        </div>
+    </div>
+    <script src="dist/app.js"></script>
+</body>
+</html>
