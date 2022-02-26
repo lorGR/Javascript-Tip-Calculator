@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #01497c;
+}
+body .card {
+  border-radius: 0.8em;
+  text-align: center;
+  padding: 0.5em 1em;
+  background-color: cornflowerblue;
+}
+body .card__title h1 {
+  margin: 0;
+}
+body .card__content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 400;
+}
+body .card__content form input {
+  width: fit-content;
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  border: 0;
+  border-radius: 0.8em;
+  font-weight: 200;
+}
+body .card__content form select {
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  border: 0;
+  border-radius: 0.8em;
+  background-color: #ffffff;
+  font-weight: 200;
+}
+body .card__content form button {
+  padding: 0.5em 1.8em;
+  width: fit-content;
+  border: 0;
+  border-radius: 0.8em;
+  background-color: #ffffff;
+  margin-top: 0.5em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+body .card__footer h2 {
+  text-transform: uppercase;
+  margin: 0.8em 0 0 0;
+}
+body .card__footer p {
+  margin: 0;
+}
+
+.shown {
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}

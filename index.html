@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="dist/style.css">
 </head>
 <body>
     <div class="card">
@@ -12,20 +16,28 @@
             <h1>Tip Calculator</h1>
         </div>
         <div class="card__content">
-            <form action="/">
+            <form action="/" name="tipCalc">
                 <label for="billAmount">Enter the bill amount:</label>
                 <input type="number" name="tipCalc" value="billAmount" id="billAmount" placeholder="Bill in ₪">
 
                 <label for="serviceRate">Choose your tip:</label>
-                <select name="serviceRate" id="serviceRate">
+                <select name="tipCalc" id="serviceRate">
                     <option value="5">5% - Bad service</option>
                     <option value="10">10% - Good service</option>
                     <option value="15">15% - Great service</option>
                     <option value="20">20% - Extraordinary service</option>
                 </select>
+
+                <label for="shareBill">How many people sharing bill:</label>
+                <input type="number" name="tipCalc" value="shareBill" id="shareBill" placeholder="empty = 1">
+
+                <button>Calculate</button>
             </form>
         </div>
         <div class="card__footer">
+            <h2 class="hidden" id="tipTitle">Tip amount:</h2>
+            <p class="tip-amount hidden" id="tipAmount">₪</p>
+            <p class="tip-each hidden" id="tipEach">each</p>
         </div>
     </div>
     <script src="dist/app.js"></script>
