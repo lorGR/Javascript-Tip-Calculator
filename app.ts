@@ -13,8 +13,6 @@ form.addEventListener('submit', (e) => {
     e.preventDefault()
     const userInfo:CardInfo = new CardInfo()
     const tip = calculateTip(userInfo)
-    tipAmountTitle.classList.remove('hidden')
-    tipAmount.classList.remove('hidden')
     console.log(tip.toFixed(2))
     tipAmount.textContent = (`${tip.toFixed(2)}₪`)
 })
@@ -31,10 +29,15 @@ class CardInfo {
 }
 
 function calculateTip(cardInfo:CardInfo):number {
-    validSharedBill(cardInfo)
-    checkUserTip(cardInfo)
-    const tip:number = (cardInfo.userBill * cardInfo.userTip) / cardInfo.userShareBill
-    return tip
+    if(validUserInput(cardInfo)){
+        validSharedBill(cardInfo)
+        checkUserTip(cardInfo)
+        const tip:number = (cardInfo.userBill * cardInfo.userTip) / cardInfo.userShareBill
+        return tip
+    }
+    else{
+        alert('amount need to be more the 0')
+    }
 }
 
 function checkUserTip(cardInfo:CardInfo):number{
@@ -72,5 +75,13 @@ function removeHiddenAddShown(){
 function removeShownAddHidden(){
     tipEach.classList.remove('shown')
     tipEach.classList.add('hidden')
+}
+
+function validUserInput(cardInfo:CardInfo):boolean{
+    if(cardInfo.userBill > 1){
+        tipAmountTitle.classList.remove('hidden')
+        tipAmount.classList.remove('hidden')
+        return true
+    }
 }
 

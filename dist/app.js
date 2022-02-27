@@ -9,8 +9,6 @@ form.addEventListener('submit', function (e) {
     e.preventDefault();
     var userInfo = new CardInfo();
     var tip = calculateTip(userInfo);
-    tipAmountTitle.classList.remove('hidden');
-    tipAmount.classList.remove('hidden');
     console.log(tip.toFixed(2));
     tipAmount.textContent = (tip.toFixed(2) + "\u20AA");
 });
@@ -23,10 +21,15 @@ var CardInfo = /** @class */ (function () {
     return CardInfo;
 }());
 function calculateTip(cardInfo) {
-    validSharedBill(cardInfo);
-    checkUserTip(cardInfo);
-    var tip = (cardInfo.userBill * cardInfo.userTip) / cardInfo.userShareBill;
-    return tip;
+    if (validUserInput(cardInfo)) {
+        validSharedBill(cardInfo);
+        checkUserTip(cardInfo);
+        var tip = (cardInfo.userBill * cardInfo.userTip) / cardInfo.userShareBill;
+        return tip;
+    }
+    else {
+        alert('amount need to be more the 0');
+    }
 }
 function checkUserTip(cardInfo) {
     if (cardInfo.userTip === 0) {
@@ -61,4 +64,11 @@ function removeHiddenAddShown() {
 function removeShownAddHidden() {
     tipEach.classList.remove('shown');
     tipEach.classList.add('hidden');
+}
+function validUserInput(cardInfo) {
+    if (cardInfo.userBill > 1) {
+        tipAmountTitle.classList.remove('hidden');
+        tipAmount.classList.remove('hidden');
+        return true;
+    }
 }
