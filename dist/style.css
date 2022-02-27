@@ -44,6 +44,7 @@ body .card__content form select {
   border-radius: 0.8em;
   background-color: #ffffff;
   font-weight: 200;
+  -moz-appearance: none;
 }
 body .card__content form button {
   padding: 0.5em 1.8em;
